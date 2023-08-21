@@ -29,6 +29,7 @@ function checkGuess() {
 
   hideAllMessages();
 
+
   if (guess === targetNumber) {
     numberOfGuessesMessage.style.display = '';
     numberOfGuessesMessage.innerHTML = `You made ${attempts} guesses`;
@@ -43,7 +44,7 @@ function checkGuess() {
     if (guess < targetNumber) {
       tooLowMessage.style.display = '';
     } else {
-      tooLowMessage.style.display = '';
+      tooHighMessage.style.display = '';
     }
 
     const remainingAttempts = maxNumberOfAttempts - attempts;
@@ -77,7 +78,7 @@ function setup() {
   maxNumberOfAttempts = 0;
 
   // Enable the input and submit button
-  submitButton.disabeld = false;
+  submitButton.disabled = false;
   guessInput.disabled = false;
 
   hideAllMessages();
